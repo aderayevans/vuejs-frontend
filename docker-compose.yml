@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/code
+    ports:
+      - 8080:8080
+    image: aderayevans/shark-api-frontend:latest
+    container_name: vuejs_container
+    command: serve -s dist -l 8080

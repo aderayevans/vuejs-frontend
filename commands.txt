@@ -1,0 +1,28 @@
+docker-compose build
+docker-compose run --rm aderayevans/shark-api-frontend django-admin startproject core .
+docker-compose up
+docker exec -it vuejs_container /bin/bash
+
+==========
+docker images
+"see the image ID session"
+docker tag 6833..... aderayevans/shark-api
+docker push aderayevans/shark-api-frontend:latest
+
+========== others
+docker ps -a
+docker run -p 8000:80 
+docker-compose exec web python manage.py migrate --noinput
+docker-compose down --remove-orphans
+docker-compose up --remove-orphans
+docker-compose -f docker-compose.local.yml up -d --build
+docker-compose -f docker-compose.local.yml up --build --remove-orphans
+docker-compose -f docker-compose.yml up --build --remove-orphans
+docker network ls
+docker network inspect ...
+
+
+================
+docker build .
+docker build -t aderayevans/shark-api-frontend:latest .
+docker run aderayevans/shark-api-frontend:latest
