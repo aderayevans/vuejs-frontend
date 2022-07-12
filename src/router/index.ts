@@ -1,4 +1,5 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
+/* eslint-disable */
+import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import Shark from "../components/Shark.vue";
 import GameLibrary from "../components/GameLibrary.vue";
