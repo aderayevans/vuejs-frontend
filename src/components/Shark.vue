@@ -1,10 +1,10 @@
 <template>
   <div>
-    <p>{{ msg }}</p>
+    <button type="button" class="btn btn-primary">{{ msg }}</button>
   </div>
 </template>
 
-<script>
+<!-- <script>
 import axios from "axios";
 
 export default {
@@ -32,4 +32,37 @@ export default {
     this.getResponse();
   },
 };
+</script> -->
+
+<script lang="ts">
+import { defineComponent, onMounted, ref } from "vue";
+import axios from "axios";
+
+export default defineComponent({
+  name: "vShark",
+  setup() {
+    const msg = ref("");
+
+    const getResponse = () => {
+      const path = "http://127.0.0.1:1337/shark";
+      axios
+        .get(path)
+        .then((res) => {
+          console.log(res.data);
+          msg.value = res.data;
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
+
+    onMounted(() => {
+      getResponse();
+    });
+
+    return {
+      msg,
+    };
+  },
+});
 </script>

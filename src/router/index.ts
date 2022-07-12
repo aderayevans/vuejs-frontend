@@ -1,6 +1,7 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
+import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 import HomeView from "../views/HomeView.vue";
 import Shark from "../components/Shark.vue";
+import GameLibrary from "../components/GameLibrary.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -21,6 +22,11 @@ const routes: Array<RouteRecordRaw> = [
     path: "/shark",
     name: "Shark",
     component: Shark,
+  },
+  {
+    path: "/games",
+    name: "Games",
+    component: GameLibrary,
   },
 ];
 

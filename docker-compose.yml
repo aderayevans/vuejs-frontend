@@ -11,4 +11,5 @@ services:
       - 8080:8080
     image: aderayevans/shark-api-frontend:latest
     container_name: vuejs_container
-    command: serve -s dist -l 8080
+    # command: serve -s dist -l 8080
+    command: npm run serve
